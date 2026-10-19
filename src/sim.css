@@ -1,0 +1,56 @@
+/* 温室模拟器天气动画与状态动效 */
+
+@keyframes wx-fall {
+  from { transform: translateY(-2%); }
+  to { transform: translateY(108%); }
+}
+@keyframes wx-rainfall {
+  from { transform: translate(0, -2%) skewX(-8deg); }
+  to { transform: translate(6%, 108%) skewX(-8deg); }
+}
+@keyframes wx-drift {
+  from { transform: translateX(-12%); }
+  to { transform: translateX(118%); }
+}
+@keyframes wx-hailfall {
+  0% { transform: translateY(-2%); opacity: 1; }
+  88% { transform: translateY(96%); opacity: 1; }
+  92% { transform: translateY(100%) translateX(2%); opacity: 0.6; }
+  96% { transform: translateY(97%); opacity: 0.8; }
+  100% { transform: translateY(108%); opacity: 0; }
+}
+@keyframes wx-shake {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(0.05px, -0.04px); }
+  40% { transform: translate(-0.05px, 0.04px); }
+  60% { transform: translate(0.04px, 0.05px); }
+  80% { transform: translate(-0.04px, -0.05px); }
+}
+@keyframes wx-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.wx-snow {
+  animation: wx-fall linear infinite;
+}
+.wx-rain {
+  animation: wx-rainfall linear infinite;
+}
+.wx-wind {
+  animation: wx-drift linear infinite;
+}
+.wx-hail {
+  animation: wx-hailfall linear infinite;
+}
+.gh-shake {
+  animation: wx-shake 0.35s infinite;
+}
+.gh-blink {
+  animation: wx-blink 0.9s infinite;
+}
+
+/* 细滚动条 */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
