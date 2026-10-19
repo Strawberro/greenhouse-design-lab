@@ -2,6 +2,8 @@
 
 《设施园艺学》在线教学工具：日光温室与文洛型玻璃温室的结构设计模拟器。
 
+**在线访问**：https://strawberro.github.io/greenhouse-design-lab/
+
 ## 功能
 
 - **两类温室**：日光温室（单栋、后墙蓄热）/ 文洛型玻璃温室（连栋、桁架天沟）
@@ -14,14 +16,17 @@
 - **挑战任务**：5 个关卡式任务，实时判定与星级评分
 - **知识课堂**：8 张《设施园艺学》核心概念卡片
 
-## 在线访问
+## 本地运行
 
-部署于 GitHub Pages：https://strawberro.github.io/greenhouse-design-lab/
+```bash
+npm install
+npm run dev
+```
 
 ## 技术栈
 
-React 18 + TypeScript + Vite + Tailwind CSS + shadcn/ui。所有结构验算均为教学简化模型。
+React + TypeScript + Vite + Tailwind CSS + shadcn/ui。所有结构验算均为教学简化模型。
 
-## 目录说明
+## 自动部署
 
-本仓库使用 `source.tar.gz.b64`（base64 编码的源码包）保存完整源码，GitHub Actions 自动解码、构建并部署到 GitHub Pages。
+推送到 `main` 分支后，GitHub Actions 自动构建并部署到 GitHub Pages（见 `.github/workflows/deploy.yml`）。
